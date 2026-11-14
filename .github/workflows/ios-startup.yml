@@ -1,7 +1,7 @@
 name: iOS startup smoke test
 on:
   push:
-    branches: [build/ios-17c6850]
+    branches: [main]
     paths: ['.github/workflows/ios-startup.yml']
   workflow_dispatch:
 permissions:
