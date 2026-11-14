@@ -14,6 +14,16 @@ This fork of [TeamFlos/Phira](https://github.com/TeamFlos/phira) lets a room hos
 
 ## Download this fork
 
+### iPhone and iPad
+
+**[Download Phira 0.8.3 Private Multiplayer Edition for iOS (unsigned IPA)](https://github.com/shinova55/phira-custom-mp/releases/download/v0.8.3-private-mp-ios.1/Phira-iOS-unsigned.ipa)**
+
+Sign build 5 with your usual sideloading tool and install it on your arm64 iPhone or iPad. In Phira, set **Multiplayer Server Address** to your custom protocol v2 server and log in with your Phira account. The Linux server linked below supports this protocol.
+
+This edition includes the font and menu assets required at startup. The app reached the Play screen in an iPhone simulator, and the maintainer confirmed it works on device. [Release notes and SHA-256 checksum](https://github.com/shinova55/phira-custom-mp/releases/tag/v0.8.3-private-mp-ios.1).
+
+### Android, Windows and Linux
+
 **[v0.8.2-private-mp.2 — protocol-v2 testing prerelease](https://github.com/shinova55/phira-custom-mp/releases/tag/v0.8.2-private-mp.2)** contains the merged PR #3 improvements. All packages were built from commit `4964909`. Release downloads do not have the 30-day expiry of Actions artifacts.
 
 | Platform / package | Download | Installation |
