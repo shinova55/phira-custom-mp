@@ -28,14 +28,14 @@ jobs:
             -sdk iphoneos -destination 'generic/platform=iOS' -derivedDataPath "$RUNNER_TEMP/Derived" \
             CODE_SIGNING_ALLOWED=NO INFOPLIST_FILE= GENERATE_INFOPLIST_FILE=YES \
             EXECUTABLE_NAME=phira-main CURRENT_PROJECT_VERSION="$GITHUB_RUN_NUMBER" \
-            INFOPLIST_KEY_UILaunchStoryboardName=LaunchScreen \
+            INFOPLIST_KEY_UIRequiresFullScreen=YES INFOPLIST_KEY_UILaunchStoryboardName=LaunchScreen \
             'INFOPLIST_KEY_UISupportedInterfaceOrientations=UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight' build
           mkdir -p Payload
           cp -R "$RUNNER_TEMP/Derived/Build/Products/Release-iphoneos/Phira.app" Payload/
           app=Payload/Phira.app
           exe=$(/usr/libexec/PlistBuddy -c 'Print :CFBundleExecutable' "$app/Info.plist")
           test -x "$app/$exe"
-          xcrun lipo -verify_arch arm64 "$app/$exe"
+          xcrun lipo "$app/$exe" -verify_arch arm64
           test -s "$app/assets/back.png"
           ditto -c -k --keepParent Payload Phira-iOS-unsigned.ipa
           unzip -tq Phira-iOS-unsigned.ipa
